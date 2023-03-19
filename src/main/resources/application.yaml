@@ -1,0 +1,33 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:test
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+    hibernate:
+      ddl-auto: create-drop
+
+    defer-datasource-initialization: true
+
+  h2:
+    console:
+      enabled: true
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: debug
+        type: trace
+
+search:
+  kakao:
+    key: 21971b3b0d44d5572181df552b3d81d9
+  naver:
+    id: TYmlVnR0BEe_RaJAmyNL
+    key: BcKD64renQ
