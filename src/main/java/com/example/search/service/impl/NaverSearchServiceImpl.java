@@ -3,14 +3,13 @@ package com.example.search.service.impl;
 import com.example.search.dto.PagingDto;
 import com.example.search.dto.ResponseDto;
 import com.example.search.dto.SearchBlogDto;
-import com.example.search.dto.naver.NaverResponseDto;
+import com.example.search.dto.naver.NaverSearchResponseDto;
 import com.example.search.enumeration.SortType;
 import com.example.search.exception.ApplicationException;
 import com.example.search.service.SearchHistoryService;
 import com.example.search.service.SearchService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Primary;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -29,6 +28,7 @@ public class NaverSearchServiceImpl implements SearchService {
     String restApiId;
 
     final SearchHistoryService searchHistoryService;
+    final RestTemplate restTemplate;
 
     @Override
     @Transactional
@@ -39,16 +39,15 @@ public class NaverSearchServiceImpl implements SearchService {
         if(size < 1 || size > 100)
             throw new IllegalArgumentException("size is more than max");
 
-        RestTemplate restTemplate = new RestTemplate();
         HttpHeaders headers = new HttpHeaders();
         headers.add("X-Naver-Client-Id", restApiId);
         headers.add("X-Naver-Client-Secret", restApiKey);
 
         HttpEntity<String> httpEntity = new HttpEntity<>(headers);
 
-        ResponseEntity<NaverResponseDto> responseEntity = restTemplate.exchange(getQueryParameter("https://openapi.naver.com/v1/search/blog.json", query, sort, page, size), HttpMethod.GET, httpEntity, NaverResponseDto.class);
+        ResponseEntity<NaverSearchResponseDto> responseEntity = restTemplate.exchange(getQueryParameter("https://openapi.naver.com/v1/search/blog.json", query, sort, page, size), HttpMethod.GET, httpEntity, NaverSearchResponseDto.class);
         if(HttpStatus.OK == responseEntity.getStatusCode()){
-            NaverResponseDto searchResponse = responseEntity.getBody();
+            NaverSearchResponseDto searchResponse = responseEntity.getBody();
 
             searchHistoryService.save(query);
 

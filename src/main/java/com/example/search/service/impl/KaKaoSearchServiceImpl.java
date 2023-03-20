@@ -3,7 +3,7 @@ package com.example.search.service.impl;
 import com.example.search.dto.PagingDto;
 import com.example.search.dto.ResponseDto;
 import com.example.search.dto.SearchBlogDto;
-import com.example.search.dto.SearchResponseDto;
+import com.example.search.dto.kakao.KaKaoSearchResponseDto;
 import com.example.search.enumeration.SortType;
 import com.example.search.service.SearchHistoryService;
 import com.example.search.service.SearchService;
@@ -27,6 +27,7 @@ public class KaKaoSearchServiceImpl implements SearchService {
 
     final SearchHistoryService searchHistoryService;
     final SearchService naverSearchService;
+    final RestTemplate restTemplate;
 
     @Override
     @Transactional
@@ -37,22 +38,21 @@ public class KaKaoSearchServiceImpl implements SearchService {
         if(size < 1 || size > 50)
             throw new IllegalArgumentException("size is more than max");
 
-        RestTemplate restTemplate = new RestTemplate();
         HttpHeaders headers = new HttpHeaders();
         headers.add(HttpHeaders.AUTHORIZATION, "KakaoAK " + restApiKey);
 
         HttpEntity<String> httpEntity = new HttpEntity<>(headers);
 
         try{
-            ResponseEntity<SearchResponseDto> responseEntity = restTemplate.exchange(getQueryParameter("https://dapi.kakao.com/v2/search/blog", query, sort, page, size), HttpMethod.GET, httpEntity, SearchResponseDto.class);
+            ResponseEntity<KaKaoSearchResponseDto> responseEntity = restTemplate.exchange(getQueryParameter("https://dapi.kakao.com/v2/search/blog", query, sort, page, size), HttpMethod.GET, httpEntity, KaKaoSearchResponseDto.class);
             if(HttpStatus.OK == responseEntity.getStatusCode()){
-                SearchResponseDto searchResponse = responseEntity.getBody();
+                KaKaoSearchResponseDto kaKaoSearchResponseDto = responseEntity.getBody();
 
                 searchHistoryService.save(query);
 
                 return ResponseDto.builder()
-                        .paging(PagingDto.of(searchResponse.getMeta().getPageable_count(), page, size))
-                        .data(searchResponse.getDocuments().stream()
+                        .paging(PagingDto.of(kaKaoSearchResponseDto.getMeta().getPageable_count(), page, size))
+                        .data(kaKaoSearchResponseDto.getDocuments().stream()
                                 .map(SearchBlogDto::of)
                                 .collect(Collectors.toList()))
                         .build();

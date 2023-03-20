@@ -1,0 +1,11 @@
+insert into search_history(id, keyword, search_hit) values (1, '피파', 10);
+insert into search_history(id, keyword, search_hit) values (2, '호날두', 20);
+insert into search_history(id, keyword, search_hit) values (3, '메시', 30);
+insert into search_history(id, keyword, search_hit) values (4, '이승기', 40);
+insert into search_history(id, keyword, search_hit) values (5, '월드컵', 50);
+insert into search_history(id, keyword, search_hit) values (6, '스프링', 60);
+insert into search_history(id, keyword, search_hit) values (7, '자바', 70);
+insert into search_history(id, keyword, search_hit) values (8, '파이썬', 80);
+insert into search_history(id, keyword, search_hit) values (9, '뉴스', 90);
+insert into search_history(id, keyword, search_hit) values (10, '날씨', 100);
+insert into search_history(id, keyword, search_hit) values (11, '기상청', 110);

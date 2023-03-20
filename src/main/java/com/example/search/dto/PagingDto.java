@@ -1,6 +1,5 @@
 package com.example.search.dto;
 
-import com.example.search.dto.kakao.MetaDto;
 import lombok.Builder;
 import lombok.Data;
 
