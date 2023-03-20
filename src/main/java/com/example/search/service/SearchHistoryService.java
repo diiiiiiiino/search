@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface SearchHistoryService {
     void save(String keyword);
-    List<SearchHistoryDto> getHistories();
+    List<SearchHistoryDto> getPopularKeyword();
 }

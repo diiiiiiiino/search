@@ -34,7 +34,7 @@ public class SearchHistoryServiceImpl implements SearchHistoryService {
     }
 
     @Override
-    public List<SearchHistoryDto> getHistories() {
+    public List<SearchHistoryDto> getPopularKeyword() {
         return searchHistoryRepository.findTop10ByOrderBySearchHitDesc()
                 .stream()
                 .map(v -> SearchHistoryDto.builder()

@@ -73,7 +73,7 @@ class SearchHistoryServiceTests {
 
         when(searchHistoryRepository.findTop10ByOrderBySearchHitDesc()).thenReturn(searchHistories);
 
-        List<SearchHistoryDto> historyDtoList = searchHistoryService.getHistories();
+        List<SearchHistoryDto> historyDtoList = searchHistoryService.getPopularKeyword();
 
         Assertions.assertEquals(10, historyDtoList.size());
     }

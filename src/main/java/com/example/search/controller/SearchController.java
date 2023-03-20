@@ -31,9 +31,9 @@ public class SearchController {
         return ResponseEntity.ok(searchService.search(query, sort, page, size));
     }
 
-    @GetMapping("/history")
-    public ResponseEntity<List<SearchHistoryDto>> getSearchHistory(
+    @GetMapping("/popular-keyword")
+    public ResponseEntity<List<SearchHistoryDto>> getPopularKeyword(
     ){
-        return ResponseEntity.ok(searchHistoryService.getHistories());
+        return ResponseEntity.ok(searchHistoryService.getPopularKeyword());
     }
 }
