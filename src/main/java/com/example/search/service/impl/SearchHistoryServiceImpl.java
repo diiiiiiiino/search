@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 @Service
 @RequiredArgsConstructor
 public class SearchHistoryServiceImpl implements SearchHistoryService {
-    final SearchHistoryRepository searchHistoryRepository;
+    private final SearchHistoryRepository searchHistoryRepository;
 
     @Override
     @Transactional

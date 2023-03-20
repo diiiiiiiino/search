@@ -12,6 +12,6 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class KaKaoSearchResponseDto {
-    MetaDto meta;
-    List<DocumentDto> documents;
+    private MetaDto meta;
+    private List<DocumentDto> documents;
 }

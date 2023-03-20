@@ -12,6 +12,6 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ResponseDto {
-    PagingDto paging;
-    List<SearchBlogDto> data;
+    private PagingDto paging;
+    private List<SearchBlogDto> data;
 }

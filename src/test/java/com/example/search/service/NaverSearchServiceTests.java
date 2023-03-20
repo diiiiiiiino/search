@@ -26,9 +26,9 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 class NaverSearchServiceTests {
-    SearchHistoryService searchHistoryService;
-    SearchService searchService;
-    RestTemplate restTemplate;
+    private SearchHistoryService searchHistoryService;
+    private SearchService searchService;
+    private RestTemplate restTemplate;
 
     NaverSearchServiceTests(){
         restTemplate = mock(RestTemplate.class);

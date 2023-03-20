@@ -28,10 +28,10 @@ import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.Mockito.*;
 
 class KaKaoSearchServiceTests {
-    SearchHistoryService searchHistoryService;
-    SearchService searchService;
-    SearchService naverSearchService;
-    RestTemplate restTemplate;
+    private SearchHistoryService searchHistoryService;
+    private SearchService searchService;
+    private SearchService naverSearchService;
+    private RestTemplate restTemplate;
 
     KaKaoSearchServiceTests(){
         restTemplate = mock(RestTemplate.class);

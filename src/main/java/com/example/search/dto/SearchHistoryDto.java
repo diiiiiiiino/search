@@ -10,6 +10,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class SearchHistoryDto {
-    String keyword;
-    Long searchHit;
+    private String keyword;
+    private Long searchHit;
 }

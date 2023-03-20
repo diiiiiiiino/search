@@ -8,13 +8,13 @@ import lombok.Data;
 @Data
 @Builder
 public class SearchBlogDto {
-    String title;
-    String contents;
-    String url;
-    String blogname;
-    String thumbnail;
-    String datetime;
-    String bloggerlink;
+    private String title;
+    private String contents;
+    private String url;
+    private String blogname;
+    private String thumbnail;
+    private String datetime;
+    private String bloggerlink;
 
     public static SearchBlogDto of(DocumentDto documentDto){
         return SearchBlogDto.builder()

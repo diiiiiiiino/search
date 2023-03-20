@@ -17,10 +17,10 @@ import javax.persistence.Id;
 @AllArgsConstructor
 public class SearchHistory {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
 
-    String keyword;
-    Long searchHit;
+    private String keyword;
+    private Long searchHit;
 
     public void plusSearchHit(){
         searchHit++;

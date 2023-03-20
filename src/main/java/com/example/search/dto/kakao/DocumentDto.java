@@ -10,10 +10,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class DocumentDto {
-    String title;
-    String contents;
-    String url;
-    String blogname;
-    String thumbnail;
-    String datetime;
+    private String title;
+    private String contents;
+    private String url;
+    private String blogname;
+    private String thumbnail;
+    private String datetime;
 }

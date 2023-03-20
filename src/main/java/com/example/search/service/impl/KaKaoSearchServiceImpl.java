@@ -23,11 +23,11 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class KaKaoSearchServiceImpl implements SearchService {
     @Value("${search.kakao.key}")
-    String restApiKey;
+    private String restApiKey;
 
-    final SearchHistoryService searchHistoryService;
-    final SearchService naverSearchService;
-    final RestTemplate restTemplate;
+    private final SearchHistoryService searchHistoryService;
+    private final SearchService naverSearchService;
+    private final RestTemplate restTemplate;
 
     @Override
     @Transactional

@@ -10,10 +10,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ItemDto {
-    String title;
-    String link;
-    String description;
-    String bloggername;
-    String bloggerlink;
-    String postdate;
+    private String title;
+    private String link;
+    private String description;
+    private String bloggername;
+    private String bloggerlink;
+    private String postdate;
 }

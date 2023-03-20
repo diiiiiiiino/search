@@ -22,13 +22,13 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class NaverSearchServiceImpl implements SearchService {
     @Value("${search.naver.key}")
-    String restApiKey;
+    private String restApiKey;
 
     @Value("${search.naver.id}")
-    String restApiId;
+    private String restApiId;
 
-    final SearchHistoryService searchHistoryService;
-    final RestTemplate restTemplate;
+    private final SearchHistoryService searchHistoryService;
+    private final RestTemplate restTemplate;
 
     @Override
     @Transactional

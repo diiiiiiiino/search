@@ -14,8 +14,8 @@ import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.*;
 
 class SearchHistoryServiceTests {
-    SearchHistoryRepository searchHistoryRepository;
-    SearchHistoryService searchHistoryService;
+    private SearchHistoryRepository searchHistoryRepository;
+    private SearchHistoryService searchHistoryService;
 
     SearchHistoryServiceTests(){
         searchHistoryRepository = mock(SearchHistoryRepository.class);

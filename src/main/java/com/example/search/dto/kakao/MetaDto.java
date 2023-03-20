@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class MetaDto {
-    Integer total_count;
-    Integer pageable_count;
-    Boolean is_end;
+    private Integer total_count;
+    private Integer pageable_count;
+    private Boolean is_end;
 }

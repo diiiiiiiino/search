@@ -12,9 +12,9 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class NaverSearchResponseDto {
-    String lastBuildDate;
-    Integer total;
-    Integer start;
-    Integer display;
-    List<ItemDto> items;
+    private String lastBuildDate;
+    private Integer total;
+    private Integer start;
+    private Integer display;
+    private List<ItemDto> items;
 }

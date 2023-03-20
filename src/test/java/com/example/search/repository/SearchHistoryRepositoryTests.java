@@ -11,7 +11,7 @@ import java.util.List;
 @DataJpaTest
 class SearchHistoryRepositoryTests {
     @Autowired
-    SearchHistoryRepository searchHistoryRepository;
+    private SearchHistoryRepository searchHistoryRepository;
 
     /**
      *  Test Case1. 검색 기록 저장

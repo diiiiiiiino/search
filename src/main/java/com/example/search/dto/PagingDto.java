@@ -6,10 +6,10 @@ import lombok.Data;
 @Data
 @Builder
 public class PagingDto {
-    Integer page;
-    Integer size;
-    Integer totalCount;
-    Integer totalPage;
+    private Integer page;
+    private Integer size;
+    private Integer totalCount;
+    private Integer totalPage;
 
     public static PagingDto of(Integer totalCount, Integer page, Integer size){
         return PagingDto.builder()
