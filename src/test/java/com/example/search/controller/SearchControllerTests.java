@@ -64,7 +64,7 @@ public class SearchControllerTests {
     @Test
     public void getSearchHistoryTest() throws Exception {
         mockMvc.perform(
-                get("/search/history"))
+                get("/search/popular-keyword"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(10)))
                 .andDo(print());
